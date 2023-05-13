@@ -3,6 +3,10 @@
 本插件基于ExcelDna开发，无需复杂的VSTO和VBA环境，只需双击即可安装使用
 **兼容Office Excel 和 WPS** （强烈建议使用金山公司开发的WPS，插件运行的更加完美！）
 
+![1](1.gif)
+
+![2](2.gif)
+
 * WPS 插件界面展示
 
 ![WPS](WPS.png)
