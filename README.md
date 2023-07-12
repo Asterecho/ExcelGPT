@@ -31,9 +31,11 @@
 ## 更新计划
 
 * ☑ ExcelGPT 初代版本实现函数调用chatgpt3.5接口 
+* ☑ ExcelGPT plus版 ，增添AI交互窗口，可以简单的处理表格内容
 * ExcelGPT pro 实现语音输入指令，打造办公界的贾维斯
-* ExcelGPT pro max 接入GPT-4.0 实现AI绘制图表 
+* ExcelGPT pro max 接入jupyter，连结python与excel，AI生成代码辅助绘图
 * ExcelGPT pro max Ultra 还没有想好叠什么buff，尽情期待
+
 
 ## 关于开源
 
