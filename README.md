@@ -1,8 +1,8 @@
 # ExcelGPT
 
-[![.NET](https://img.shields.io/badge/--512BD4?logo=.net-ChatGPT&logoColor=ffffff)](https://dotnet.microsoft.com/)
+[![.NET](https://img.shields.io/badge/--512BD4?logo=.net&logoColor=ffffff)](https://dotnet.microsoft.com/)
 
-![](https://img.shields.io/badge/Csharp-ExcelDNA-brightgreen.svg)
+![](https://img.shields.io/badge/ExcelDNA-ChatGPT-brightgreen.svg)
 
 ![](https://img.shields.io/badge/Prism-markdown-pink.svg)
 
@@ -10,7 +10,6 @@
 
 [![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)](https://jupyter.org/try)
 
-[![Npm package license](https://badgen.net/npm/llicense/discord.js)](https://npmjs.com/package/discord.js)
 
 ![小众软件推荐](2023-7-26 20-11-51.png)
 
