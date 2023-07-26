@@ -1,10 +1,16 @@
 # ExcelGPT
 
+[![.NET](https://img.shields.io/badge/--512BD4?logo=.net-ChatGPT&logoColor=ffffff)](https://dotnet.microsoft.com/)
+
 ![](https://img.shields.io/badge/Csharp-ExcelDNA-brightgreen.svg)
 
 ![](https://img.shields.io/badge/Prism-markdown-pink.svg)
 
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 [![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)](https://jupyter.org/try)
+
+[![Npm package license](https://badgen.net/npm/llicense/discord.js)](https://npmjs.com/package/discord.js)
 
 ![小众软件推荐](2023-7-26 20-11-51.png)
 
@@ -52,3 +58,5 @@
 
 请在小众软件[插件发布页](https://meta.appinn.net/t/topic/43611)  反馈问题
 或者在github提出Issues
+
+[![Stargazers over time](https://starchart.cc/Naereen/badges.svg)](https://starchart.cc/Naereen/badges)
