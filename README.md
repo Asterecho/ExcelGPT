@@ -1,5 +1,3 @@
-# ExcelGPT
-
 ![小众软件推荐](appinn.png)
 
 ![](https://img.shields.io/badge/ExcelDNA-ChatGPT-brightgreen.svg)
@@ -41,10 +39,6 @@
 
 （计划略作调整，取消语音交互，感觉有点蠢）
 
-
-## 关于开源
-
-由于担心不良商贩盗用，暂时不开源
 
 ## 问题反馈&功能更新建议
 
