@@ -2,6 +2,7 @@
 
 ![](https://img.shields.io/badge/ExcelDNA-ChatGPT-brightgreen.svg)
 ![](https://img.shields.io/badge/Prism-markdown-pink.svg)
+![](https://img.shields.io/badge/Winform-SunnyUI-blue.svg)
 ![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)
 
 本插件基于ExcelDna开发，无需复杂的VSTO和VBA环境，只需双击即可安装使用
