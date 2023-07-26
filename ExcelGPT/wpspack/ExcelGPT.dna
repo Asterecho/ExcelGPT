@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DnaLibrary Name="ExcelGPT" RuntimeVersion="v4.0">
+	<ExternalLibrary Path="ExcelGPT.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+	<ExternalLibrary Path="donate.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+	<ExternalLibrary Path="plus.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+	<ExternalLibrary Path="Microsoft.Web.WebView2.Core.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+	<ExternalLibrary Path="Microsoft.Web.WebView2.WinForms.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+	<ExternalLibrary Path="SUNNYUI.COMMON.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+  <ExternalLibrary Path="SUNNYUI.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+  <ExternalLibrary Path="Markdig.dll" Pack="true" LoadFromBytes="true" ExplicitExports="true" />
+</DnaLibrary>

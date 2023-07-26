@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{67345125-0576-43BC-B75B-24B80891374F}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExcelGPT</RootNamespace>
+    <AssemblyName>ExcelGPT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="donate">
+      <HintPath>..\donate.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDna.Integration">
+      <HintPath>..\ExcelDna.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Markdig">
+      <HintPath>..\Markdig.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core">
+      <HintPath>..\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms">
+      <HintPath>..\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="plus">
+      <HintPath>..\plus.dll</HintPath>
+    </Reference>
+    <Reference Include="SUNNYUI">
+      <HintPath>..\SUNNYUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SUNNYUI.COMMON">
+      <HintPath>..\SUNNYUI.COMMON.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CTPControls.cs" />
+    <Compile Include="CTPManager.cs" />
+    <Compile Include="Ribbon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="donate.png" />
+    <EmbeddedResource Include="feedback.png" />
+    <EmbeddedResource Include="update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomUI14.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="QQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Jupyter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Microsoft.Web.WebView2.Core.dll" />
+    <EmbeddedResource Include="WebView2Loader.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ai.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
