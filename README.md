@@ -1,10 +1,10 @@
 # ExcelGPT
 
-![小众软件推荐](2023-7-26 20-11-51.png)
-
 ![](https://img.shields.io/badge/ExcelDNA-ChatGPT-brightgreen.svg)
 ![](https://img.shields.io/badge/Prism-markdown-pink.svg)
 ![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)
+
+![](2023-7-26 20-11-51.png)
 
 本插件基于ExcelDna开发，无需复杂的VSTO和VBA环境，只需双击即可安装使用
 **兼容Office Excel 和 WPS** （强烈建议使用金山公司开发的WPS，插件运行的更加完美！）
@@ -17,7 +17,7 @@
 
 ![pro](pro.png)
 
-![词云](2023-7-22 21-53-40.png)
+![wordcloud](2023-7-22 21-53-40.png)
 
 ## 使用方法
 
