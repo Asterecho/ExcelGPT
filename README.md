@@ -49,4 +49,7 @@ QQ：585492948
 请在小众软件[插件发布页](https://meta.appinn.net/t/topic/43611)  反馈问题
 或者在github提出Issues
 
-[![Stargazers over time](https://starchart.cc/Naereen/badges.svg)](https://starchart.cc/Naereen/badges)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Asterecho/ExcelGPT&type=Date)](https://star-history.com/#Asterecho/ExcelGPT&Date)
