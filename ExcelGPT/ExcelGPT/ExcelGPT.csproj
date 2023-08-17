@@ -74,13 +74,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIForm.cs" />
+    <Compile Include="APIForm.Designer.cs">
+      <DependentUpon>APIForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CTPControls.cs" />
     <Compile Include="CTPManager.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XllAddIn.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="about.png" />
+    <EmbeddedResource Include="APIForm.resx">
+      <DependentUpon>APIForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="donate.png" />
@@ -102,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="api.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

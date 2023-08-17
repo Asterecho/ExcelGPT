@@ -31,3 +31,5 @@ C:\Users\Administrator\Desktop\ExcelGPT\ExcelGPT\obj\Debug\ExcelGPT.pdb
 C:\Users\Administrator\Desktop\ExcelGPT\ExcelGPT\bin\Debug\SUNNYUI.COMMON.dll
 C:\Users\Administrator\Desktop\ExcelGPT\ExcelGPT\bin\Debug\SUNNYUI.dll
 C:\Users\Administrator\Desktop\ExcelGPT\ExcelGPT\bin\Debug\Markdig.dll
+C:\Users\Administrator\Desktop\ExcelGPT\ExcelGPT\obj\Debug\ExcelGPT.APIForm.resources
+C:\Users\Administrator\Desktop\ExcelGPT\ExcelGPT\obj\Debug\ExcelGPT.csproj.GenerateResource.Cache

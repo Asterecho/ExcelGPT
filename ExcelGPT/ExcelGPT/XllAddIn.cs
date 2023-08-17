@@ -12,6 +12,7 @@ using System.IO;
 using System.Reflection;
 using System.Linq;
 
+
 namespace ExcelGPT
 {
 	/// <summary>
@@ -21,9 +22,10 @@ namespace ExcelGPT
 	{
 		  public void AutoOpen()
         {
+		   	ExtractAPITXT();
             Console.Beep(1000, 200);
             
-            ExtractWebDLLFromAssembly();
+           // ExtractWebDLLFromAssembly();
         }
 		  
 		public void AutoClose()
@@ -31,6 +33,19 @@ namespace ExcelGPT
            Console.Beep(1000, 200);           
         }
 		
+		//释放api.txt
+		 public void ExtractAPITXT(){
+			//MessageBox.Show(gettxtbyname("api.txt"));
+			File.WriteAllText(@"C:\Program Files\api.txt",gettxtbyname("api.txt"));
+         }
+		public string gettxtbyname(string name){
+         	Assembly assembly = Assembly.GetExecutingAssembly();
+			string resourceName = assembly.GetName().Name.ToString() + "."+name;
+			 
+			 StreamReader reader = new StreamReader( assembly.GetManifestResourceStream(resourceName));
+			 
+			return	 reader.ReadToEnd();
+         }
 		#region 释放dll
 		private byte[] GetAssemblyBytes(string assemblyResource)
 		{

@@ -80,13 +80,52 @@ namespace ExcelGPT
             [ExcelArgument(Description = "输入请求")] string inputString
             )
         {
+        	 if (!File.Exists(@"C:\Program Files\api.txt")) //非初次安装，而是仅替换，不会释放api.txt，故创建个空文件
+			{
+        	 	File.WriteAllText(@"C:\Program Files\api.txt","");
+			} 
+        		
+        	string[] sk=File.ReadAllText(@"C:\Program Files\api.txt").Split('\n');
+        	if (sk[0]=="") {
+        		APIForm api=new APIForm();
+                api.Show();
+        	}else{
+        	Api=sk[0];
+        	Agent=sk[1];
+			}
              string json="{\"model\": \"gpt-3.5-turbo\",\"messages\": [{\"role\": \"user\",\"content\": \""+inputString+"\"}]}";
-			string txt=Post(json,"https://ai.fakeopen.com/v1/chat/completions");
+			string txt=Post(json,Agent);
         	 string[] split =txt.Split(new string[] { "content\":\"", "\"},\"finish_reason" }, StringSplitOptions.RemoveEmptyEntries);
 			
+//        	  string json="{\"prompt\":\""+inputString+"\",\"options\":{},\"systemMessage\":\"You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.\",\"temperature\":0.8,\"top_p\":1,\"model\":\"chinchilla\",\"user\":null}";
+//			string txt=Post(json,api);
+//        	 string[] split =txt.Split(new string[] { "content\":\"", "\"},\"finish_reason" }, StringSplitOptions.RemoveEmptyEntries);
+//			
+        	// return txt;
         	 return split[1];
+        	
         }
-        
+      //  public static string api="https://1.b88.asia/api/chat-process";
+//        public void comboBox_Click(IRibbonControl control,string text)
+//        {
+//        	 
+//            switch (text)
+//            {
+//
+//                case "公益1":
+//            		MessageBox.Show("切换至公益接口1");
+//                    api="https://1.b88.asia/api/chat-process";
+//                    break;
+//                case "公益2":
+//                    MessageBox.Show("切换至公益接口2");
+//                    api="https://p3.v50.ltd/api/chat-process";
+//                    break;
+//                
+//                default:
+//                    MessageBox.Show("Hello:" + control.Id);
+//                    break;
+//            }
+//        }
         /// <summary>
         /// ribbon callback. 回调
         /// </summary>
@@ -99,6 +138,10 @@ namespace ExcelGPT
 
                 case "About":
                     MessageBox.Show("ExcelGPT Pro \n作者：吃爆米花的小熊\n\n本插件永久免费，禁止商用倒卖贩卖\n\n允许在B站、抖音、头条、快手、知乎、简书等平台分享扩散，但要署名开发者\n不允许说是国外小哥开发的\n\n---致谢名单---\n\nGovert van Drimmelen\nCharltsing(泡泡大龙王)\nnodeman\nyangf85\npandora");
+                    break;
+                case "APIKEY":
+                    APIForm api=new APIForm();
+                    api.Show();
                     break;
                 case "Ai":
                     //ExcelDnaUtil.XllPath  插件目录
@@ -242,6 +285,8 @@ namespace ExcelGPT
             		return new Bitmap(getimgbyname("update.png"));
             	case "Jupyter":
             		return new Bitmap(getimgbyname("Jupyter.png"));	
+            	case "APIKEY":
+            		return new Bitmap(getimgbyname("key.png"));
                 default :
                     return new Bitmap(System.Drawing.Image.FromFile(""));
             }
@@ -254,6 +299,14 @@ namespace ExcelGPT
 			return	System.Drawing.Image.FromStream(assembly.GetManifestResourceStream(resourceName));
          }
          
+         public static string gettxtbyname(string name){
+         	Assembly assembly = Assembly.GetExecutingAssembly();
+			string resourceName = assembly.GetName().Name.ToString() + "."+name;
+			 
+			 StreamReader reader = new StreamReader( assembly.GetManifestResourceStream(resourceName));
+			 
+			return	 reader.ReadToEnd();
+         }
          #region CustomTaskPane
         public void OnShowCTP(IRibbonControl control)
         {
@@ -296,6 +349,8 @@ namespace ExcelGPT
         }
         #endregion CustomTaskPane
         
+        public static string Agent="";
+        public static string Api="";
          #region Post请求
 		 /// <summary>
 		 /// http Post请求
@@ -321,7 +376,7 @@ namespace ExcelGPT
 		    myRequest.Accept = Accept;
 		    //myRequest.ContentType = ContentType;
 		    myRequest.ContentType = "application/json; charset=UTF-8";
-		    myRequest.Headers.Add("Authorization","Bearer pk-this-is-a-real-free-pool-token-for-everyone");
+	 myRequest.Headers.Add("Authorization","Bearer "+ Api);
 		    myRequest.ContentLength = buf.Length;
 		    myRequest.MaximumAutomaticRedirections = 1;
 		    myRequest.AllowAutoRedirect = true;

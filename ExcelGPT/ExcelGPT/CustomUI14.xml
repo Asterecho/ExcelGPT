@@ -56,6 +56,22 @@
 							size="large"
               onAction='button_Click' screentip="加群讨论" supertip="加群讨论" />
 				</group> 
+				<!-- 
+				<group id="SeventhGroup" label="切换接口">
+            <comboBox id="api" label="切换接口" size="large" onChange="comboBox_Click">
+              <item id="api1" label="公益1" />
+              <item id="api2" label="公益2" />
+            </comboBox>
+				</group> 
+				-->
+				<group id="EighthGroup"
+					   label="输入API">
+					<button id='APIKEY'
+							label="输入自己的API"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="输入API" supertip="输入API" />
+				</group>
 			</tab>
 		</tabs>
 	</ribbon>

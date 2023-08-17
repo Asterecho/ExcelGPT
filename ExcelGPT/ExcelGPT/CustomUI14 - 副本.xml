@@ -1,0 +1,76 @@
+<customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui'  onLoad='ribbonLoaded'>
+	<!-- 在 [XML]中被定义为 空白(whitespace)字符：空格 (&#x0020;) Tab (&#x0009;) 回车 (&#x000D;) 换行 (&#x000A;)-->
+	<ribbon>
+		<tabs>
+			<tab id='ExcelGPT Pro' label='ExcelGPT Pro'>
+				<group id="FirstGroup"
+					   label="AI交互">
+					<button id='Ai'
+							label="AI交互"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="AI交互" supertip="AI交互" />
+				</group>
+				<group id='CTPTab' label='Python交互'>
+					<button id='Jupyter' label='Jupyter' getImage ="GetImage" size='large' onAction='OnShowCTP' />
+					<!--<button id='DeleteCTP' label='关闭窗格&#x000D;' imageMso='HappyFace' size='large' onAction='OnDeleteCTP' />-->
+					<!--<button id='DeleteCTP' label='Delete CTP' getImage='Button_getImage' size='large' onAction='OnDeleteCTP' />-->					
+				</group >
+				<group id="SecondGroup"
+					   label="关于插件">
+					<button id='About'
+							label="关于插件"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="关于插件" supertip="关于ExcelGPT Pro插件" />
+				</group>
+				<group id="ThirdGroup"
+					   label="问题反馈">
+					<button id='Feedback'
+							label="问题反馈"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="问题反馈" supertip="问题反馈" />
+				</group>
+				<group id="FourthGroup"
+					   label="更新计划">
+					<button id='Update'
+							label="更新计划"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="更新计划" supertip="更新计划" />
+				</group> 
+				<group id="FifthGroup"
+					   label="赞助支持">
+					<button id='Donate'
+							label="赞助支持"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="赞助支持" supertip="赞助支持" />
+				</group>
+				<group id="SixthGroup"
+					   label="加群讨论">
+					<button id='QQ'
+							label="加群讨论"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="加群讨论" supertip="加群讨论" />
+				</group> 
+				<group id="SeventhGroup" label="切换接口">
+            <comboBox id="api" label="切换接口" size="large" onChange="comboBox_Click">
+              <item id="api1" label="公益1" />
+              <item id="api2" label="公益2" />
+            </comboBox>
+				</group> 
+				<group id="EighthGroup"
+					   label="输入API">
+					<button id='APIKEY'
+							label="输入自己的API"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="输入API" supertip="输入API" />
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>

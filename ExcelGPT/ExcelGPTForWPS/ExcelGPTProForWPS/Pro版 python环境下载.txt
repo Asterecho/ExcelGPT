@@ -1,0 +1,6 @@
+
+下载链接：
+https://www.123pan.com/s/HRY9-jnoVv.html
+
+本环境为免安装，解压即用的python环境
+运行里面的一键启动，即可打开jupyter，密码是000
