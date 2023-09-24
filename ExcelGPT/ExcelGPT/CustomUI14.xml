@@ -56,6 +56,14 @@
 							size="large"
               onAction='button_Click' screentip="加群讨论" supertip="加群讨论" />
 				</group> 
+				<group id="SeventhGroup"
+					   label="使用说明">
+					<button id='book'
+							label="使用说明"
+							getImage ="GetImage"
+							size="large"
+              onAction='button_Click' screentip="使用说明" supertip="使用说明" />
+				</group>
 				<!-- 
 				<group id="SeventhGroup" label="切换接口">
             <comboBox id="api" label="切换接口" size="large" onChange="comboBox_Click">

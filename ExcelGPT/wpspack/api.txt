@@ -1,0 +1,2 @@
+fk186214-zJDvkFCBInfcc6p9VBQfF6rq7iGSAYsm|ck265-cddc746
+https://openai.api2d.net/v1/chat/completions

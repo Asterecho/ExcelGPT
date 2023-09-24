@@ -19,7 +19,8 @@ using Markdig;
 using Sunny.UI;
 using System.Reflection;
 using Microsoft.Web.WebView2;
-  
+using ExcelDna.Integration;
+
 namespace plus
 {
 	/// <summary>
@@ -104,24 +105,41 @@ namespace plus
 		 public string md="";
 		void UiButton1Click(object sender, EventArgs e)
 		{
-			 if (!File.Exists(@"C:\Program Files\api.txt")) //非初次安装，而是仅替换，不会释放api.txt，故创建个空文件
+			 string s = Path.GetDirectoryName(ExcelDnaUtil.XllPath);
+			 
+			 if (!File.Exists(s+@"\api.txt")) //非初次安装，而是仅替换，不会释放api.txt，故创建个空文件
 			{
-        	 	File.WriteAllText(@"C:\Program Files\api.txt","");
+        	 	File.WriteAllText(s+@"\api.txt","");
 			} 
         		
-        	string[] sk=File.ReadAllText(@"C:\Program Files\api.txt").Split('\n');
-        	if (sk[0]=="") {
-        		MessageBox.Show("请输入API KEY");
+        	string[] sk=File.ReadAllText(s+@"\api.txt").Split('\n');
+        	if (sk[1]=="") {
+        		MessageBox.Show("请输入代理");
         	}else{
         	Api=sk[0];
         	Agent=sk[1];
 			}
         	
-			string json="{\"model\": \"gpt-3.5-turbo\",\"messages\": [{\"role\": \"user\",\"content\": \""+textBox1.Text.Trim()+md+"\"}]}";
+        	string tt="";
+        	if (Agent.Contains("zhtec")) {
+        		string json2="{\"model\": \"gpt-3.5-turbo\",\"messages\": [{\"role\": \"user\",\"content\": \""+textBox1.Text.Trim()+md+"\"}]}";
+			 string[] txt2=Post(json2,Agent).Split('\n');
+			 string t="";
+			for (int i = 1; i < txt2.Length-5; i++) {
+			 	if (i%2==0) {
+			 		 string[] split =txt2[i].Split(new string[] { "content\":\"", "\"},\"finish_reason" }, StringSplitOptions.RemoveEmptyEntries);
+			 		 t+=split[1];
+			 	}
+			}
+			 tt= t.Replace("\\n","\r\n");
+        	}else{
+        		string json="{\"model\": \"gpt-3.5-turbo\",\"messages\": [{\"role\": \"user\",\"content\": \""+textBox1.Text.Trim()+md+"\"}]}";
 			string txt=Post(json,Agent);
 			
         	string[] split =txt.Split(new string[] { "content\":\"", "\"},\"finish_reason" }, StringSplitOptions.RemoveEmptyEntries);
-        	//Clipboard.SetText(split[1]);
+        	tt=split[1].Replace("\\n","\r\n");
+        	}
+			//Clipboard.SetText(split[1]);
 //			string json="{\"prompt\":\""+textBox1.Text.Trim()+md+"\",\"options\":{},\"systemMessage\":\"You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.\",\"temperature\":0.8,\"top_p\":1,\"model\":\"chinchilla\",\"user\":null}";
 //			string txt=Post(json,"https://1.b88.asia/api/chat-process");
 //        	string[] split =txt.Split(new string[] { "content\":\"", "\"},\"finish_reason" }, StringSplitOptions.RemoveEmptyEntries);
@@ -129,7 +147,7 @@ namespace plus
         	 
         	string temp="<head><link rel=\"stylesheet\"href=\"https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css\"><link rel=\"stylesheet\"href=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism-coy.min.css\"><link rel=\"stylesheet\"href=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/toolbar/prism-toolbar.min.css\"><link rel=\"stylesheet\"href=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/line-numbers/prism-line-numbers.min.css\"></head><body><!--prism核心js(用于渲染代码块)--><script src=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.min.js\"></script><!--显示代码块行号--><script src=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/line-numbers/prism-line-numbers.min.js\"></script><!--工具栏(一些插件的前置依赖)--><script src=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/toolbar/prism-toolbar.min.js\"></script><!--代码块显示语言名称--><script src=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/show-language/prism-show-language.min.js\"></script><!--复制代码--><script src=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js\"></script><!--自动去cdn加载对应语言的代码高亮js--><script src=\"https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js\"></script>$Markdown$</body>";
  			//string html= Markdown.ToHtml(split[1].Replace("\\n","\r\n"));
- 			string html= Markdown.ToHtml(split[1].Replace("\\n","\r\n"));
+ 			string html= Markdown.ToHtml(tt);
  			html=temp.Replace("$Markdown$",html);
 			webView21.CoreWebView2.NavigateToString(html);
 		}

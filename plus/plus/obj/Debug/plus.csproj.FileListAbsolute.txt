@@ -34,3 +34,4 @@ C:\Users\Administrator\Desktop\plus\plus\obj\Debug\plus.pdb
 C:\Users\Administrator\Desktop\plus\plus\bin\Debug\plus.dll.config
 C:\Users\Administrator\Desktop\plus\plus\bin\Debug\plus.dll
 C:\Users\Administrator\Desktop\plus\plus\obj\Debug\plus.dll
+C:\Users\Administrator\Desktop\plus\plus\bin\Debug\ExcelDna.Integration.dll

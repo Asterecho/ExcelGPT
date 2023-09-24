@@ -22,8 +22,8 @@ namespace ExcelGPT
 	{
 		  public void AutoOpen()
         {
-		   	ExtractAPITXT();
-            Console.Beep(1000, 200);
+		   //	ExtractAPITXT();
+          //  Console.Beep(1000, 200);
             
            // ExtractWebDLLFromAssembly();
         }
@@ -36,7 +36,9 @@ namespace ExcelGPT
 		//释放api.txt
 		 public void ExtractAPITXT(){
 			//MessageBox.Show(gettxtbyname("api.txt"));
-			File.WriteAllText(@"C:\Program Files\api.txt",gettxtbyname("api.txt"));
+			 string s = Path.GetDirectoryName(ExcelDnaUtil.XllPath);
+			 
+			File.WriteAllText(s+@"\api.txt",gettxtbyname("api.txt"));
          }
 		public string gettxtbyname(string name){
          	Assembly assembly = Assembly.GetExecutingAssembly();

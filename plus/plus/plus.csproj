@@ -35,6 +35,9 @@
     <Reference Include="Aspose.Cells">
       <HintPath>..\Aspose.Cells.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelDna.Integration">
+      <HintPath>..\ExcelDna.Integration.dll</HintPath>
+    </Reference>
     <Reference Include="Markdig">
       <HintPath>..\Markdig.dll</HintPath>
     </Reference>

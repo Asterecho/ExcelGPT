@@ -82,40 +82,31 @@
     <Compile Include="CTPManager.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XllAddIn.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="about.png" />
     <EmbeddedResource Include="APIForm.resx">
       <DependentUpon>APIForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="donate.png" />
-    <EmbeddedResource Include="feedback.png" />
-    <EmbeddedResource Include="update.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="CustomUI14.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="QQ.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Jupyter.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Microsoft.Web.WebView2.Core.dll" />
     <EmbeddedResource Include="WebView2Loader.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="about.png" />
     <EmbeddedResource Include="ai.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="donate.png" />
+    <EmbeddedResource Include="feedback.png" />
+    <EmbeddedResource Include="Jupyter.png" />
     <EmbeddedResource Include="key.png" />
+    <EmbeddedResource Include="QQ.png" />
+    <EmbeddedResource Include="update.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="api.txt" />
+    <EmbeddedResource Include="book.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

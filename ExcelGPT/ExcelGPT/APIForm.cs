@@ -11,6 +11,7 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using Sunny.UI;
+using ExcelDna.Integration;
 
 namespace ExcelGPT
 {
@@ -26,6 +27,14 @@ namespace ExcelGPT
 			//
 			InitializeComponent();
 			
+			  string s = Path.GetDirectoryName(ExcelDnaUtil.XllPath);
+			  
+			string[] sk= File.ReadAllText(s+@"\api.txt").Split('\n');
+			if (sk[0]!="") {
+				textBox1.Text=sk[0];
+				textBox2.Text=sk[1];
+			}
+			
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
@@ -33,12 +42,28 @@ namespace ExcelGPT
 		
 		void Button1Click(object sender, EventArgs e)
 		{
+			  string s = Path.GetDirectoryName(ExcelDnaUtil.XllPath);
+			  
 			string txt=textBox1.Text.Trim()+"\n"+textBox2.Text.Trim();
-			File.WriteAllText(@"C:\Program Files\api.txt",txt);
+			File.WriteAllText(s+@"\api.txt",txt);
+			
+			this.uiButton1.FillColor=System.Drawing.Color.Pink;
+			
 		}
 		void LinkLabel1LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			System.Diagnostics.Process.Start("https://github.com/chatanywhere/GPT_API_free");
+			textBox1.Text="";
+			textBox2.Text="https://api.chatanywhere.com.cn/v1/chat/completions";
+		}
+		
+		void LinkLabel2LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			textBox1.Text="pk-this-is-a-real-free-pool-token-for-everyone";
+			textBox2.Text="https://ai.fakeopen.com/v1/chat/completions";
+			string s = Path.GetDirectoryName(ExcelDnaUtil.XllPath);  
+			string txt=textBox1.Text.Trim()+"\n"+textBox2.Text.Trim();
+			File.WriteAllText(s+@"\api.txt",txt);
 		}
 	}
 }

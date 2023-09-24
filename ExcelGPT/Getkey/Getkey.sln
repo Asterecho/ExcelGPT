@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Getkey", "Getkey\Getkey.csproj", "{846CAC94-176A-419D-AA68-7F4C6D8545DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{846CAC94-176A-419D-AA68-7F4C6D8545DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846CAC94-176A-419D-AA68-7F4C6D8545DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846CAC94-176A-419D-AA68-7F4C6D8545DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846CAC94-176A-419D-AA68-7F4C6D8545DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

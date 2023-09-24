@@ -75,18 +75,21 @@ namespace ExcelGPT
             return ribbonxml;
         }
         
-        [ExcelFunction(Category = "AI", Description = "gpt-3.5-turbo(4k)")]
+        [ExcelFunction(Category = "AI", Description = "gpt-3.5-turbo")]
         public static object AI(
             [ExcelArgument(Description = "输入请求")] string inputString
             )
         {
-        	 if (!File.Exists(@"C:\Program Files\api.txt")) //非初次安装，而是仅替换，不会释放api.txt，故创建个空文件
+        	  string s = Path.GetDirectoryName(ExcelDnaUtil.XllPath);
+        	  
+                    
+        	 if (!File.Exists(s+@"\api.txt")) //非初次安装，而是仅替换，不会释放api.txt，故创建个空文件
 			{
-        	 	File.WriteAllText(@"C:\Program Files\api.txt","");
+        	 	File.WriteAllText(s+@"\api.txt","");
 			} 
         		
-        	string[] sk=File.ReadAllText(@"C:\Program Files\api.txt").Split('\n');
-        	if (sk[0]=="") {
+        	string[] sk=File.ReadAllText(s+@"\api.txt").Split('\n');
+        	if (sk[1]=="") {
         		APIForm api=new APIForm();
                 api.Show();
         	}else{
@@ -102,9 +105,11 @@ namespace ExcelGPT
 //        	 string[] split =txt.Split(new string[] { "content\":\"", "\"},\"finish_reason" }, StringSplitOptions.RemoveEmptyEntries);
 //			
         	// return txt;
-        	 return split[1];
+        	 return split[1].Replace("\\n","\r\n");
         	
         }
+        
+         
       //  public static string api="https://1.b88.asia/api/chat-process";
 //        public void comboBox_Click(IRibbonControl control,string text)
 //        {
@@ -137,7 +142,8 @@ namespace ExcelGPT
             {
 
                 case "About":
-                    MessageBox.Show("ExcelGPT Pro \n作者：吃爆米花的小熊\n\n本插件永久免费，禁止商用倒卖贩卖\n\n允许在B站、抖音、头条、快手、知乎、简书等平台分享扩散，但要署名开发者\n不允许说是国外小哥开发的\n\n---致谢名单---\n\nGovert van Drimmelen\nCharltsing(泡泡大龙王)\nnodeman\nyangf85\npandora");
+                    MessageBox.Show("ExcelGPT Pro \n作者：吃爆米花的小熊\n\n本插件永久免费，禁止商用倒卖贩卖\n\n允许在B站、抖音、头条、快手、知乎、简书等平台分享扩散，但要署名开发者\n不允许说是国外小哥开发的\n\n---致谢名单---\n\nGovert van Drimmelen\nCharltsing(泡泡大龙王)\nnodeman\nyangf85\npandora\nGPT_API_free\n刘天宇");
+                  
                     break;
                 case "APIKEY":
                     APIForm api=new APIForm();
@@ -158,6 +164,16 @@ namespace ExcelGPT
                 case "Feedback":
 					MessageBox.Show("即将跳转至用户反馈页面");
 					System.Diagnostics.Process.Start("https://meta.appinn.net/t/topic/43611");
+                    break;
+                case "book":
+                    Random ran = new Random();
+					int n = ran.Next(100);
+					if (n % 2 ==0) {
+						System.Diagnostics.Process.Start("https://excelgpt.gczy.cc/");
+					}
+					else{
+						System.Diagnostics.Process.Start("https://excelgpt.12520.top/");
+					}
                     break;
                 case "QQ":
                     MessageBox.Show("ExcelGPT官方交流群 585492948");
@@ -254,18 +270,18 @@ namespace ExcelGPT
 			//https://groups.google.com/g/exceldna/c/DUNfSIoDarA			
         }
         //不管用！！！
-        [ExcelFunction(IsMacroType=true)]
-		public static string CallingFileName()
-		{
-		ExcelReference reference = (ExcelReference)XlCall.Excel
-		(XlCall.xlfCaller);
-		string sheetName = (string)XlCall.Excel(XlCall.xlSheetNm,
-		reference);
-		
-		return System.IO.Path.Combine(
-		(string)XlCall.Excel(XlCall.xlfGetDocument, 2, sheetName),
-		(string)XlCall.Excel(XlCall.xlfGetDocument, 88, sheetName));
-		}
+//        [ExcelFunction(IsMacroType=true)]
+//		public static string CallingFileName()
+//		{
+//		ExcelReference reference = (ExcelReference)XlCall.Excel
+//		(XlCall.xlfCaller);
+//		string sheetName = (string)XlCall.Excel(XlCall.xlSheetNm,
+//		reference);
+//		
+//		return System.IO.Path.Combine(
+//		(string)XlCall.Excel(XlCall.xlfGetDocument, 2, sheetName),
+//		(string)XlCall.Excel(XlCall.xlfGetDocument, 88, sheetName));
+//		}
         
          public Bitmap GetImage(IRibbonControl Control)
         {
@@ -287,6 +303,8 @@ namespace ExcelGPT
             		return new Bitmap(getimgbyname("Jupyter.png"));	
             	case "APIKEY":
             		return new Bitmap(getimgbyname("key.png"));
+            	case "book":
+            		return new Bitmap(getimgbyname("book.png"));
                 default :
                     return new Bitmap(System.Drawing.Image.FromFile(""));
             }
@@ -327,7 +345,7 @@ namespace ExcelGPT
         {
             CTPManager.Instance.DeleteCTP(GetActivewindowHwnd());
         }
-        private int GetActivewindowHwnd()
+        private static int GetActivewindowHwnd()
         {
             //Log.Info("GetActivewindowHwnd");
             int hwnd = 0;
@@ -342,8 +360,8 @@ namespace ExcelGPT
             //以下代码屏蔽，待引用Excel或者WPS库之后再加上获取Hwnd的代码。
             if (ExcelDnaUtil.ExcelVersion > 14)     //Excel2013 版本号是15.0
             {                
-            //    ExcelPIA.Window activewin = (ExcelDnaUtil.Application as ExcelPIA.Application).ActiveWindow;
-            //    if (activewin != null) hwnd = activewin.Hwnd;
+//                ExcelPIA.Window activewin = (ExcelDnaUtil.Application as ExcelPIA.Application).ActiveWindow;
+//                if (activewin != null) hwnd = activewin.Hwnd;
             }
             return hwnd;
         }

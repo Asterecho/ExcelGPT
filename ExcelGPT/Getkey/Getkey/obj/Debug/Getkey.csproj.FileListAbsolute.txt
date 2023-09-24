@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\Getkey\Getkey\bin\Debug\Getkey.exe.config
+C:\Users\Administrator\Desktop\Getkey\Getkey\bin\Debug\Getkey.exe
+C:\Users\Administrator\Desktop\Getkey\Getkey\bin\Debug\Getkey.pdb
+C:\Users\Administrator\Desktop\Getkey\Getkey\bin\Debug\RESTSHARP.dll
+C:\Users\Administrator\Desktop\Getkey\Getkey\obj\Debug\Getkey.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Getkey\Getkey\obj\Debug\Getkey.exe
+C:\Users\Administrator\Desktop\Getkey\Getkey\obj\Debug\Getkey.pdb
+C:\Users\Administrator\Desktop\Getkey\Getkey\bin\Debug\NEWTONSOFT.JSON.dll

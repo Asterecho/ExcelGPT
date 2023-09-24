@@ -21,6 +21,7 @@ namespace ExcelGPT
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.LinkLabel linkLabel1;
+		private System.Windows.Forms.LinkLabel linkLabel2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -51,6 +52,7 @@ namespace ExcelGPT
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.linkLabel2 = new System.Windows.Forms.LinkLabel();
 			this.SuspendLayout();
 			// 
 			// label2
@@ -67,7 +69,7 @@ namespace ExcelGPT
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(316, 21);
 			this.textBox2.TabIndex = 8;
-			this.textBox2.Text = "https://api.chatanywhere.com.cn/v1/chat/completions";
+			this.textBox2.Text = "https://openai.api2d.net/v1/chat/completions";
 			// 
 			// label1
 			// 
@@ -87,13 +89,24 @@ namespace ExcelGPT
 			 
 			this.uiButton1.Click += new System.EventHandler(this.Button1Click);
 			// 
+			// linkLabel2
+			// 
+			this.linkLabel2.Location = new System.Drawing.Point(10, 120);
+			this.linkLabel2.Name = "linkLabel2";
+			this.linkLabel2.Size = new System.Drawing.Size(75, 29);
+			this.linkLabel2.TabIndex = 10;
+			this.linkLabel2.TabStop = true;
+			this.linkLabel2.Text = "pandora";
+			this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel2LinkClicked);
+			
+			// 
 			// textBox1
 			// 
 			this.textBox1.Location = new System.Drawing.Point(80, 15);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(316, 21);
 			this.textBox1.TabIndex = 5;
-			this.textBox1.Text = "sk-Se2RNhBmS5cfyUZmoSvlyxRVLPupxYADKcSKg2hqdj8a1hPp";
+			this.textBox1.Text = "fk186214-zJDvkFCBInfcc6p9VBQfF6rq7iGSAYsm|ck265-cddc746";
 			this.toolTip1.SetToolTip(this.textBox1, "这是测试key，如果不能用，请点击右下角，注册github账号，申请免费api key\r\n");
 			// 
 			// linkLabel1
@@ -112,6 +125,7 @@ namespace ExcelGPT
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(405, 180);
 			this.Controls.Add(this.linkLabel1);
+			this.Controls.Add(this.linkLabel2);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.label1);
